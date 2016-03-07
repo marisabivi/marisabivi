@@ -1,0 +1,15 @@
+@mixin button ($color,$bg-color){
+    display: inline-block;
+    font-weight: bold;
+    text-decoration: none;
+    margin: .4em;
+    border-radius: 30px;
+    color: $color;
+    font-family: portfolio;
+    font-size: 8em;
+    &:hover{
+    color: $bg-color;
+    animation: shake 1s;
+    transition-timing-function:  linear;
+    }
+}
