@@ -1,3 +1,3 @@
 permalink: pretty
-baseurl: "/marisabivi"
-exclude: ['README.md, 'scss']
+baseurl: ""
+exclude: ['README.md ,'scss']
