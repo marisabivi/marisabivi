@@ -1,12 +1,12 @@
-# TEAM 
+# TEAM
 
 Designer & Developer: Marisa Bivi  <biv.marisa@yahoo.ca>
-Site: http://mcreativedesigns.ca
+Site: http://marisabivi.ca
 Github: https://github.com/marisabivi
 
 ---
 
 # SOFTWARE
 
--Brackets
+-Atom
 -Github
