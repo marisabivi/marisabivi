@@ -2,10 +2,94 @@
 html {
   background-color: #333333;
   color: #f7be58;
+  box-sizing: border-box;
+}
+
+html *, html *:before, html *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+
+.skip-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.skip-links a {
+  position: absolute;
+  top: -4em;
+  background-color: #333333;
+  color: #f7be58;
+  font-weight: 100;
+  padding: 0.75em 0.75em;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-links a:focus {
+  top: 0;
+}
+
+.nav {
+  background-color: #333333;
+  padding: .5em 0 9em;
+  margin-right: 1em;
+}
+
+.nav ul {
+  padding: 1em;
+  text-decoration: none;
+}
+
+.nav li {
+  padding: 0;
+  float: right;
+  display: inline-block;
+  list-style-type: none;
+  border-top: 1.5px solid #333333;
+  border-bottom: 1.5px solid #333333;
+}
+
+.nav li:hover {
+  border-top: 1.5px solid #f7be58;
+  border-bottom: 1.5px solid #f7be58;
+}
+
+.nav li a {
+  text-align: right;
+  text-decoration: none;
+  color: #f7be58;
+  display: block;
+  padding: .5em 1em;
 }
 
 .square {
   background-color: #f7be58;
+  padding: 10em;
+  height: 15em;
+  margin: 1em;
+}
+
+.logo {
+  padding-top: 1.3em;
+  height: 13em;
+  margin: -4em;
+}
+
+.social {
+  margin-top: 9em;
+  height: 2.5em;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.social-group {
+  margin-left: 30%;
 }
 
 .grid {
@@ -1009,7 +1093,7 @@ html {
 }
 
 html {
-  font: normal 100%/1.5 "Abril Fatface", serif;
+  font: normal 100%/1.5 "josefin_sansregular", sans-serif;
 }
 
 @media only screen and (min-width: 60em) {

@@ -1,8 +1,88 @@
 html {
   background-color: $black;
   color: $gold;
+  box-sizing: border-box;
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+body {
+  margin: 0;
+}
+
+// Skip Links
+
+.skip-links {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  a {
+    position: absolute;
+    top: -4em;
+    background-color:$black;
+    color: $gold;
+    font-weight: 100;
+    padding: 0.75em 0.75em;
+    text-decoration: none;
+    z-index: 100;
+  }
+
+  a:focus {
+   top: 0;
+  }
+}
+
+.nav {
+  background-color: $black;
+  padding: .5em 0 9em;
+  margin-right: 1em;
+
+	ul {
+		padding: 1em;
+    text-decoration: none;
+	}
+	li {
+		padding: 0;
+    float: right;
+    display: inline-block;
+    list-style-type: none;
+    border-top: 1.5px solid $black;
+		border-bottom: 1.5px solid $black;
+		&:hover{
+    border-top: 1.5px solid $gold;
+		border-bottom: 1.5px solid $gold;
+		}
+	a {
+    text-align: right;
+		text-decoration: none;
+		color: $gold;
+		display: block;
+		padding: .5em 1em;
+	}
+ }
 }
 
 .square {
   background-color: $gold;
+  padding: 10em;
+  height: 15em;
+  margin: 1em;
+}
+
+.logo {
+  padding-top: 1.3em;
+  height: 13em;
+  margin: -4em;
+}
+
+.social {
+  margin-top: 9em;
+  height:2.5em;
+  align-items: center;
+}
+
+.social-group {
+  margin-left: 30%;
 }
