@@ -1,4 +1,10 @@
 /*Imports*/
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
 html {
   background-color: #333333;
   color: #f7be58;
@@ -9,8 +15,8 @@ html *, html *:before, html *:after {
   box-sizing: inherit;
 }
 
-body {
-  margin: 0;
+a {
+  text-decoration: none;
 }
 
 .skip-links {
@@ -21,75 +27,282 @@ body {
 
 .skip-links a {
   position: absolute;
-  top: -4em;
-  background-color: #333333;
-  color: #f7be58;
-  font-weight: 100;
-  padding: 0.75em 0.75em;
-  text-decoration: none;
-  z-index: 100;
+  top: -3em;
+  color: #333333;
+  background-color: #f7be58;
+  padding: .5em;
+  z-index: 2000000;
 }
 
 .skip-links a:focus {
   top: 0;
 }
 
-.nav {
+#toggle-nav span,
+#toggle-nav span:before,
+#toggle-nav span:after {
+  cursor: pointer;
+  height: 5px;
+  width: 35px;
+  background-color: #f7be58;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 250ms ease-in-out;
+}
+
+#toggle-nav span:before {
+  top: -10px;
+}
+
+#toggle-nav span:after {
+  bottom: -10px;
+}
+
+#toggle-nav.active span {
+  background-color: transparent;
+}
+
+#toggle-nav.active span:before,
+#toggle-nav.active span:after {
+  top: 0;
+}
+
+#toggle-nav.active span:before {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+#toggle-nav.active span:after {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+.hb-toggle {
+  margin-right: 2em;
+  transition: all 250ms ease-in-out;
+}
+
+/* --------- Sticky Navigation ----- */
+.top-nav {
+  padding: .65em 2em;
+  position: fixed;
+  z-index: 10000;
+  transition: all 250ms linear;
+}
+
+.top-nav li:last-child {
+  position: fixed;
+  right: 2em;
+}
+
+/* --------- Side Navigation ----- */
+.side-nav {
+  position: fixed;
+  visibility: hidden;
+  background-color: rgba(17, 17, 17, 0.6);
+  width: 100%;
+  height: 100%;
+  right: -20em;
+  z-index: 999;
+  opacity: 0;
+  transition: all 250ms linear;
+}
+
+.side-nav[data-state="active"] {
+  opacity: 1;
+  right: 0em;
+  visibility: visible;
+}
+
+.sn-container {
+  position: fixed;
+  height: 100%;
+  right: 0;
+  display: block;
+  padding: 4em 3em;
   background-color: #333333;
-  padding: .5em 0 9em;
-  margin-right: 1em;
 }
 
-.nav ul {
-  padding: 1em;
+.sn-container li {
+  padding-top: 1em;
+  width: 5em;
+  padding-left: 70%;
+  text-align: right;
+  display: block;
+  margin-bottom: .5em;
+}
+
+.sn-container a {
   text-decoration: none;
+  text-align: right;
+  color: #f7be58;
+  padding: .5em 0 .5em;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
+  transition: all 250ms linear;
 }
 
-.nav li {
-  padding: 0;
-  float: right;
-  display: inline-block;
-  list-style-type: none;
+.sn-container a:hover, .sn-container a:focus, .sn-container a:active {
+  width: 100%;
+  padding: .5em 0 .5em;
+  border-top: 2px solid #f7be58;
+  border-bottom: 2px solid #f7be58;
+}
+
+.square {
+  text-align: center;
+  padding-top: 15em;
+  padding-bottom: .05em;
+  height: 20em;
+}
+
+.logo {
+  height: 12em;
+}
+
+.logo-corner {
+  height: 3em;
+  margin: 1em 0 0  1em;
+}
+
+#instagram {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: -.5vw;
+  margin-left: -.5vw;
+  /* margin-right: -.5vw; */
+}
+
+@media screen and (max-width: 600px) {
+  .message {
+    font-size: 1.1em;
+    margin-bottom: 6vw;
+  }
+  #instagram {
+    margin-top: -6px;
+    margin-left: -5.5vw;
+    margin-right: -5.5vw;
+  }
+}
+
+#instagram:hover a {
+  opacity: .8;
+}
+
+#instagram a {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  -ms-flex-preferred-size: calc(100% / 3);
+  -webkit-flex-basis: calc(100% / 3);
+          flex-basis: calc(100% / 3);
+  line-height: 0;
+  transition: opacity .2s ease-in-out;
+  border: .5vw solid transparent;
+}
+
+@media screen and (min-width: 1450px) {
+  #instagram a {
+    -ms-flex-preferred-size: calc(100% / 4);
+    -webkit-flex-basis: calc(100% / 4);
+            flex-basis: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 1050px) {
+  #instagram a {
+    -ms-flex-preferred-size: calc(100% / 2);
+    -webkit-flex-basis: calc(100% / 2);
+            flex-basis: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #instagram a {
+    -ms-flex-preferred-size: calc(100% / 4);
+    -webkit-flex-basis: calc(100% / 4);
+            flex-basis: calc(100% / 4);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  #instagram a {
+    -ms-flex-preferred-size: calc(100% / 3);
+    -webkit-flex-basis: calc(100% / 3);
+            flex-basis: calc(100% / 3);
+  }
+}
+
+#instagram a:hover {
+  opacity: 1;
+}
+
+#instagram img {
+  width: 100%;
+}
+
+.error {
+  padding-bottom: -1em;
+  text-align: center;
+}
+
+.error h1 {
+  padding-top: 3em;
+  font-size: 3em;
+  text-align: center;
+}
+
+.error p {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.error a {
   border-top: 1.5px solid #333333;
   border-bottom: 1.5px solid #333333;
+  padding: .25em;
+  text-decoration: none;
+  color: #f7be58;
 }
 
-.nav li:hover {
+.error a:hover {
   border-top: 1.5px solid #f7be58;
   border-bottom: 1.5px solid #f7be58;
 }
 
-.nav li a {
-  text-align: right;
-  text-decoration: none;
-  color: #f7be58;
-  display: block;
-  padding: .5em 1em;
-}
-
-.square {
-  background-color: #f7be58;
-  padding: 10em;
-  height: 15em;
-  margin: 1em;
-}
-
-.logo {
-  padding-top: 1.3em;
-  height: 13em;
-  margin: -4em;
-}
-
 .social {
-  margin-top: 9em;
-  height: 2.5em;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  text-align: center;
+  margin-top: 2em;
+  height: 1.75em;
 }
 
 .social-group {
-  margin-left: 30%;
+  text-align: center;
+}
+
+footer {
+  margin-top: 6em;
+  background-color: #f7be58;
+  height: 5.5em;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .grid {

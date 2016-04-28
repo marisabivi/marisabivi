@@ -1,3 +1,9 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: hidden;
+}
+
 html {
   background-color: $black;
   color: $gold;
@@ -7,82 +13,306 @@ html {
   }
 }
 
-body {
-  margin: 0;
+a {
+  text-decoration:none;
 }
-
-// Skip Links
 
 .skip-links {
-  margin: 0;
-  padding: 0;
+  margin:0;
+  padding:0;
   list-style-type: none;
+}
 
-  a {
-    position: absolute;
-    top: -4em;
-    background-color:$black;
-    color: $gold;
-    font-weight: 100;
-    padding: 0.75em 0.75em;
-    text-decoration: none;
-    z-index: 100;
-  }
+.skip-links a {
+  position: absolute;
+  top: -3em;
+  color: $black;
+  background-color: $gold;
+  padding: .5em;
 
-  a:focus {
-   top: 0;
+  z-index: 2000000;
+
+}
+
+.skip-links a:focus {
+  top: 0;
+}
+
+#toggle-nav span,
+#toggle-nav span:before,
+#toggle-nav span:after {
+  cursor: pointer;
+  height: 5px;
+  width: 35px;
+  background-color: $gold;
+  position: absolute;
+  display: block;
+  content: '';
+
+  transition: all 250ms ease-in-out;
+
+}
+
+#toggle-nav span:before {
+  top: -10px;
+}
+#toggle-nav span:after {
+  bottom: -10px;
+}
+
+#toggle-nav.active span {
+  background-color: transparent;
+}
+
+#toggle-nav.active span:before,
+#toggle-nav.active span:after {
+  top: 0;
+}
+
+#toggle-nav.active span:before {
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform:rotate(45deg);
+}
+
+#toggle-nav.active span:after {
+  -ms-transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  transform:rotate(-45deg);
+}
+
+.hb-toggle {
+  margin-right: 2em;
+  transition: all 250ms ease-in-out;
+}
+
+/* --------- Sticky Navigation ----- */
+
+.top-nav {
+  padding: .65em 2em;
+  position: fixed;
+  z-index: 10000;
+  transition: all 250ms linear;
+
+ li:last-child {
+  position: fixed;
+  right: 2em;
   }
 }
 
-.nav {
-  background-color: $black;
-  padding: .5em 0 9em;
-  margin-right: 1em;
+/* --------- Side Navigation ----- */
 
-	ul {
-		padding: 1em;
-    text-decoration: none;
-	}
-	li {
-		padding: 0;
-    float: right;
-    display: inline-block;
-    list-style-type: none;
-    border-top: 1.5px solid $black;
-		border-bottom: 1.5px solid $black;
-		&:hover{
-    border-top: 1.5px solid $gold;
-		border-bottom: 1.5px solid $gold;
-		}
-	a {
+.side-nav {
+  position: fixed;
+  visibility: hidden;
+  background-color: rgba(17, 17, 17, .6);
+  width: 100%;
+  height: 100%;
+  right: -20em;
+  z-index: 999;
+  opacity: 0;
+
+  transition: all 250ms linear;
+}
+
+.side-nav[data-state="active"] {
+  opacity: 1;
+  right: 0em;
+  visibility: visible;
+}
+
+.sn-container {
+  position:fixed;
+  height: 100%;
+  right: 0;
+  display: block;
+  padding: 4em 3em;
+  background-color: $black;
+
+  li {
+    padding-top: 1em;
+    width: 5em;
+    padding-left: 70%;
     text-align: right;
-		text-decoration: none;
-		color: $gold;
-		display: block;
-		padding: .5em 1em;
-	}
- }
+    display: block;
+    margin-bottom: .5em;
+  }
+
+  a {
+    text-decoration: none;
+    text-align: right;
+    color: $gold;
+    padding: .5em 0 .5em;
+    border-top: 2px solid $black;
+    border-bottom: 2px solid $black;
+    transition: all 250ms linear;
+    &:hover,
+    &:focus,
+    &:active{
+      width: 100%;
+      padding: .5em 0 .5em;
+      border-top: 2px solid $gold;
+      border-bottom: 2px solid $gold;
+    }
+  }
 }
 
 .square {
-  background-color: $gold;
-  padding: 10em;
-  height: 15em;
-  margin: 1em;
+  text-align: center;
+  padding-top: 15em;
+  padding-bottom: .05em;
+  height: 20em;
 }
 
 .logo {
-  padding-top: 1.3em;
-  height: 13em;
-  margin: -4em;
+  height: 12em;
 }
 
+.logo-corner {
+  height:3em;
+  margin: 1em 0 0  1em;
+}
+
+//Instagram
+#instagram {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-top: -.5vw;
+    margin-left: -.5vw;
+    /* margin-right: -.5vw; */
+}
+
+@media screen and (max-width:600px) {
+    .message {
+        font-size: 1.1em;
+        margin-bottom: 6vw
+    }
+
+    #instagram {
+        margin-top: -6px;
+        margin-left: -5.5vw;
+        margin-right: -5.5vw
+    }
+}
+
+#instagram:hover a {
+    opacity: .8
+}
+
+#instagram a {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    -webkit-flex-basis: calc(100% / 3);
+    -ms-flex-preferred-size: calc(100% / 3);
+    flex-basis: calc(100% / 3);
+    line-height: 0;
+    -webkit-transition: opacity .2s ease-in-out;
+    transition: opacity .2s ease-in-out;
+    border: .5vw solid transparent
+}
+
+@media screen and (min-width:1450px) {
+    #instagram a {
+        -webkit-flex-basis: calc(100% / 4);
+        -ms-flex-preferred-size: calc(100% / 4);
+        flex-basis: calc(100% / 4)
+    }
+}
+
+@media screen and (max-width:1050px) {
+    #instagram a {
+        -webkit-flex-basis: calc(100% / 2);
+        -ms-flex-preferred-size: calc(100% / 2);
+        flex-basis: calc(100% / 2)
+    }
+}
+
+@media screen and (max-width:900px) {
+    #instagram a {
+        -webkit-flex-basis: calc(100% / 4);
+        -ms-flex-preferred-size: calc(100% / 4);
+        flex-basis: calc(100% / 4)
+    }
+}
+
+@media screen and (max-width:750px) {
+    #instagram a {
+        -webkit-flex-basis: calc(100% / 3);
+        -ms-flex-preferred-size: calc(100% / 3);
+        flex-basis: calc(100% / 3)
+    }
+}
+
+#instagram a:hover {
+    opacity: 1
+}
+
+#instagram img {
+    width: 100%
+}
+
+//error-page
+.error {
+  padding-bottom: -1em;
+  text-align: center;
+}
+
+.error h1 {
+  padding-top:3em;
+  font-size: 3em;
+  text-align: center;
+}
+
+.error p {
+  text-align: center;
+  padding-bottom: 2em;
+}
+
+.error a {
+  border-top: 1.5px solid $black;
+  border-bottom: 1.5px solid $black;
+  padding: .25em;
+  text-decoration: none;
+  color: $gold;
+  &:hover{
+  border-top: 1.5px solid $gold;
+  border-bottom: 1.5px solid $gold;
+  }
+}
+
+//social-footer
 .social {
-  margin-top: 9em;
-  height:2.5em;
-  align-items: center;
+  text-align: center;
+  margin-top: 2em;
+  height:1.75em;
 }
 
 .social-group {
-  margin-left: 30%;
+  text-align: center;
+}
+
+footer {
+  margin-top: 6em;
+  background-color: $gold;
+  height: 5.5em;
+  overflow: hidden;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }

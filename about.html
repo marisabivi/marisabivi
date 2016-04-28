@@ -10,7 +10,6 @@
     <meta name="description" content="{{page.meta}}">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 </head>
-
 <body>
 <!--SKIP LINKS -->
     <ul class="skip-links">
@@ -27,6 +26,10 @@
 			</a>
 		</li>
 	</ul>
+  <div class="bucket unit unit-xs-1-2">
+    <a href="{{site.baseurl}}/"><img class="logo-corner" src="{{site.baseurl}}/images/mb-logo.svg"></a>
+  </div>
+  <div class="bucket unit unit-xs-1-2">
 	<div id="nav" class="side-nav nav" data-state="inactive" role="navigation">
 	   <ul class="sn-container smooth-scroll">
        <li><a class="" href="{{site.baseurl}}/extra" role="link">Extra</a></li>
@@ -34,12 +37,25 @@
        <li><a class="" href="{{site.baseurl}}/work" role="link">Work</a></li>
 		</ul>
 				</div>
+  </div>
 	</header>
 
-  <div class="square">
-  <div class="logo" role="logo"><a href="{{site.baseurl}}/#/"><img src="{{site.baseurl}}/images/mb-logo.svg" class="logo" alt="Marisa Bivi"></a></div>
-</div>
-
+  <div>
+    <img src="">
+  </div>
+  <div class="grid">
+    <div class="bucket unit unit-xs-1 unit-s-1 unit-m-1-2">
+     <p class="gutter pad-t">I'm a Junior Designer based in Ottawa, Canada who is fueld by tea and sweets. In design my passion lies in branding, illustration, and UX-UI along with furthering my knowledge and ability in all aspects of design. </p>
+    </div>
+    <div class="bucket unit unit-xs-1 unit-s-1 unit-m-1-2">
+      <div id="instagram" class="island">
+        <h3>My Life</h3>
+        <p>...it's often mostly sweets</p>
+        <!-- LightWidget WIDGET -->
+        <iframe src="//lightwidget.com/widgets/866b9556348856bb8e35b0e816fcf2ea.html" id="lightwidget_866b955634" name="lightwidget_866b955634"  scrolling="no" allowtransparency="true" class="lightwidget-widget" style="width: 100%; border: 0; overflow: hidden;"></iframe>
+      </div>
+    </div>
+  </div>
 </body>
 <footer class="gold">
   <div class="social-group">
@@ -54,6 +70,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
+  <script src="//lightwidget.com/widgets/lightwidget.js"></script>
+  <script src="{{site.baseurl}}/instafeed.js">
+  </script>
   <script src="{{site.baseurl}}/js/main.js"></script>
-</body>
+
 </html>
