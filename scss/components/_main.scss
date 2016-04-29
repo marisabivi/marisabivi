@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
 }
 
 html {
@@ -111,7 +110,6 @@ a {
   right: -20em;
   z-index: 999;
   opacity: 0;
-
   transition: all 250ms linear;
 }
 
@@ -119,6 +117,7 @@ a {
   opacity: 1;
   right: 0em;
   visibility: visible;
+  top: 0em;
 }
 
 .sn-container {
@@ -131,36 +130,39 @@ a {
 
   li {
     padding-top: 1em;
-    width: 5em;
-    padding-left: 70%;
+    width: 10em;
+    left: 0;
+    padding-left: 80%;
     text-align: right;
     display: block;
     margin-bottom: .5em;
+    border-bottom: 2px solid $gold;
+    &:hover,
+    &:focus,
+    &:active{
+      width: 10em;
+      border-bottom: 20em;
+      border-bottom: 2px solid $gold;
+      background-color: #28281E;
+      background-size: 4em;
+    }
+
   }
 
   a {
+    width: 10em;
     text-decoration: none;
     text-align: right;
     color: $gold;
     padding: .5em 0 .5em;
-    border-top: 2px solid $black;
-    border-bottom: 2px solid $black;
     transition: all 250ms linear;
-    &:hover,
-    &:focus,
-    &:active{
-      width: 100%;
-      padding: .5em 0 .5em;
-      border-top: 2px solid $gold;
-      border-bottom: 2px solid $gold;
     }
   }
-}
 
 .square {
   text-align: center;
   padding-top: 15em;
-  padding-bottom: .05em;
+  padding-bottom: 20em;
   height: 20em;
 }
 
@@ -295,6 +297,174 @@ a {
   }
 }
 
+.work {
+  padding-top: 1em;
+}
+
+.grey {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+
+//lightbox
+
+.white {
+  margin-top: 2em;
+  background-color: white
+}
+
+#work1 {
+ display: none;
+ max-height: none;
+}
+
+#work2 {
+  display: none;
+  max-height: none;
+}
+
+#work1.open{
+  display: block;
+
+}
+#work2.open{
+  display: block;
+
+}
+
+
+#work3,
+#work4,
+#work5,
+#work6
+{
+  display: none;
+
+}
+
+
+#work3.open,
+#work4.open,
+#work5.open,
+#work6.open {
+  display: block;
+}
+
+.black {
+  color: $black;
+}
+
+hr {
+   border-bottom: 1px solid #F8BE58;
+   border-top: 1px solid #F8BE58;
+}
+
+img.work {
+    width:15em;
+    height: auto;
+    display: block;
+    margin-left: 10%;
+}
+
+@media only screen and (min-width: 25em) {
+  img.work {
+        width:15em;
+        height: auto;
+        display: block;
+        margin-left: 15%;
+    }
+  }
+@media only screen and (min-width: 38em) {
+  img.work {
+       width:13em;
+       height: auto;
+       display: block;
+       margin-left: 15%;
+   }
+ }
+
+ @media only screen and (min-width: 60em) {
+   img.work {
+          width:15em;
+          height: auto;
+          display: block;
+          margin-left: 20%;
+      }
+}
+
+img.work2 {
+  width:50%;
+  height: auto;
+  display: block;
+  margin-left: 25%;
+  padding-bottom: 2em;
+
+}
+
+.next p {
+    text-align: right;
+}
+
+.next {
+    width: 2em;
+    position: fixed;
+    right: 10px;
+    top: 15em;
+    display: none;
+}
+
+.previous {
+    width: 2em;
+    position: fixed;
+    top: 15em;
+    left:10px;
+    display: none;
+}
+
+    .next,
+    .previous {
+    display: block;
+    }
+
+
+.previous:hover,
+.next:hover{
+border-bottom: 2px solid rgba(0,0,0,0.5);
+}
+
+.icon-left,
+.icon-right {
+    font-size: 2em;
+    vertical-align: center;
+    margin-top: 20px;
+    position: relative;
+    color: rgba(0,0,0,0.5);
+}
+
+hr {
+    border-top: 1px dotted #8c8b8b;
+	border-bottom: 1px dotted #fff;
+    margin: 5px;
+}
+
+.icons a {
+    text-decoration: none;
+    color: black;
+    font-size: 2em;
+}
+
+.icons a:hover {
+    border-bottom: 2px solid #e41a50;
+    color: #e41a50;
+}
+
+.icons {
+    display: inline-block;
+}
+
+
 //social-footer
 .social {
   text-align: center;
@@ -307,12 +477,13 @@ a {
 }
 
 footer {
-  margin-top: 6em;
+  position: relative;
+  margin-top: 1em;
   background-color: $gold;
   height: 5.5em;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
+//  overflow: hidden;
+//  position: absolute;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
 }

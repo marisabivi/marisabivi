@@ -19,25 +19,27 @@
     </ul>
 
 <header class="nav-wrapper" role="banner">
-	<ul class="top-nav unit unit-xs-1">
-		<li class="unit">
-			<a id="toggle-nav" class="hb-toggle" href="#">
-			  <span></span>
-			</a>
-		</li>
-	</ul>
-  <div class="bucket unit unit-xs-1-2">
-    <a href="{{site.baseurl}}/"><img class="logo-corner" src="{{site.baseurl}}/images/mb-logo.svg"></a>
+  <div class="grid">
+    <div class="bucket unit unit-xs-1-2">
+      <a href="{{site.baseurl}}/"><img class="logo-corner" src="{{site.baseurl}}/images/mb-logo.svg"></a>
+    </div>
+    <div class="bucket unit unit-xs-1-2">
+       <ul class="top-nav unit unit-xs-1">
+           <li class="unit">
+                <a id="toggle-nav" class="hb-toggle" href="#">
+                  <span></span>
+                </a>
+            </li>
+        </ul>
+        <div id="nav" class="side-nav nav" data-state="inactive" role="navigation">
+           <ul class="sn-container smooth-scroll">
+             <li><a class="" href="{{site.baseurl}}/extra" role="link">Extra</a></li>
+             <li><a class="" href="{{site.baseurl}}/about" role="link">About</a></li>
+             <li><a class="" href="{{site.baseurl}}/work" role="link">Work</a></li>
+          </ul>
+        </div>
   </div>
-  <div class="bucket unit unit-xs-1-2">
-	<div id="nav" class="side-nav nav" data-state="inactive" role="navigation">
-	   <ul class="sn-container smooth-scroll">
-       <li><a class="" href="{{site.baseurl}}/extra" role="link">Extra</a></li>
-       <li><a class="" href="{{site.baseurl}}/about" role="link">About</a></li>
-       <li><a class="" href="{{site.baseurl}}/work" role="link">Work</a></li>
-		</ul>
-				</div>
-  </div>
+
 	</header>
 
   <div>
@@ -71,8 +73,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
   <script src="//lightwidget.com/widgets/lightwidget.js"></script>
-  <script src="{{site.baseurl}}/instafeed.js">
-  </script>
+  <!-- <script src="{{site.baseurl}}/instafeed.js">
+  </script>-->
   <script src="{{site.baseurl}}/js/main.js"></script>
 
 </html>

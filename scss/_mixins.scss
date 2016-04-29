@@ -9,8 +9,6 @@
     font-size: 8em;
     &:hover{
     color: $bg-color;
-    animation: shake 1s;
-    transition-timing-function:  linear;
     }
 }
 
@@ -53,4 +51,26 @@
 
 @mixin img {
   width: 100%;
+}
+
+@mixin element-invisible {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+@mixin element-invisible-off {
+  position: static !important;
+  clip: auto;
+  height: auto;
+  width: auto;
+  overflow: auto;
+}
+
+@mixin showhide{
+  display: none;
+  position: relative;
+  transition: all 150ms linear;
 }

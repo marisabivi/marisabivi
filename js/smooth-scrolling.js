@@ -1,0 +1,4 @@
+
+$('.fixednav').localScroll({
+    target:'body'
+});

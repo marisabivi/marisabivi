@@ -1,0 +1,77 @@
+
+<div class="lightbox" id="{{include.id}}">
+
+        <div class="lightbox-container">
+
+            <p class="artform kilo">{{include.artform}}</p>
+
+            <hr class="underline">
+
+            <h1>{{include.title}}</h1>
+            <h2 class="mega subtext">{{include.text}}</h2>
+
+   <div class="embed embed-16by9">
+    <iframe  class="embed-item" src="{{include.source}}" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+       </div>
+
+
+                    <div class="grid">
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">The challenge</h2>
+                            <p>{{include.challenge}}</p>
+                        </div>
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">The solution</h2>
+                            <p>{{include.solution}}</p>
+                        </div>
+                    </div>
+
+
+        <div class="grid">
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">Painpoints</h2>
+                            <p class="list">{{include.painpoint}}</p>
+                            <ul>
+                                <li>{{include.pointone}}</li>
+                                <li>{{include.pointtwo}}</li>
+                                <li>{{include.pointthree}}</li>
+                                <li>{{include.pointfour}}</li>
+                            </ul>
+                        </div>
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">Goal</h2>
+                            <p>{{include.goals}}</p>
+                        </div>
+        </div>
+            <img src="{{include.sketch1}}" alt="Sketch">
+            <img class="push" src="{{include.results}}" alt="stopit!app results">
+            <img src="{{include.final}}" alt="stopit!app">
+
+            <a class="more-link" href="https://www.behance.net/gallery/32012933/STOP-IT-app"><p>More about this project</p></a>
+
+    </div>
+
+    <ul class="grid galnav">
+         <a href="{{include.back}}" class=" info unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+        <li class="previous">
+             <i class="icon-left"></i>
+        </li>
+            </a>
+
+        <a href="{{include.after}}" class="info unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+        <li class="next">
+            <i class="icon-right"></i>
+        </li>
+        </a>
+    </ul>
+
+    <hr>
+        <a class="closelightbox" href="{{site.baseurl}}/#_">
+        <p>Back to Portfolio</p>
+    </a>
+
+</div>
