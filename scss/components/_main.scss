@@ -311,24 +311,45 @@ a {
 //lightbox
 
 .white {
-  margin-top: 2em;
   background-color: white
 }
 
-#work1 {
- display: none;
- max-height: none;
+#flip, #panel{
+  margin:0px;
+  padding:10px;
+
 }
+#flip{
+  cursor:pointer;
+  color:#ffffff;
+  position:relative;
+  height: 5em;
+}
+
+#panel{
+  background-color:#eeeeee;
+}
+
+a.network_link{
+  text-decoration:none;
+  color:#6e6e6e;
+  box-shadow: 0 1px 0 white inset, 0 -1px 0 #d4d4d4 inset;
+}
+.icon-arrow:before {
+content: '\25BC';
+  float:right;
+}
+
+.newboxes {
+    display: none;
+}
+
 
 #work2 {
   display: none;
   max-height: none;
 }
 
-#work1.open{
-  display: block;
-
-}
 #work2.open{
   display: block;
 
@@ -355,6 +376,18 @@ a {
 .black {
   color: $black;
 }
+
+section { position:relative; display:block; width:100%; height:560px; background:#eee}
+
+.content {
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition:all 0.5 ease-in-out 0s;
+    -ms-transition: all 0.5 ease-in-out 0s;
+    -o-transition: all 0.5 ease-in-out 0s;
+    transition: all 0.5 ease-in-out 0s;
+}
+
+.button { display:block; width:50%; float:left; text-align:center; padding:20px 0; }
 
 hr {
    border-bottom: 1px solid #F8BE58;

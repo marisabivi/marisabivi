@@ -3,36 +3,21 @@ var sideNav = $ ('.side-nav');
 var $btnShowHide = $('.showhide');
 
 //lightbox
-function resettoggle() {
-	var e = document.getElementById(id);
-		e.style.display = 'none';
-		}
-
-function toggle_visibility(id) {
-	var e = document.getElementById(id);
-		if(e.style.display == 'none')
-			e.style.display = 'block';
-
-	else
-			e.style.display = 'none';
-		}
-
-		//prevents IE error??
-		function toggle_visibility(id) {
-			var e = document.getElementById(id);
-			if(e != null) {
-				if(e.style.display == 'none')
-				{ e.style.display = 'block'; }
-				else { e.style.display = 'none'; }
-			}
-		}
-
-
-	function hide(id) {
-			var e = document.getElementById(id);
-			if(e.style.display == 'block')
-				e.style.display = 'none';
-			}
+function slideonlyone(thechosenone) {
+     $('.newboxes2').each(function(index) {
+          if ($(this).attr("id") == thechosenone) {
+               $(this).slideDown(200);
+          }
+          else {
+               $(this).slideUp(600);
+          }
+     });
+}
+//$(document).ready(function(){
+  //$("#panel").click(function(){
+    //$("#flip").slideToggle("slow");
+  //});
+//});
 
 //smoothscroll
 //$('.fixednav').localScroll({
