@@ -1,12 +1,9 @@
 /*Imports*/
-body {
-  margin: 0;
-  padding: 0;
-}
-
+/* ---------  Basics --------- */
 html {
   background-color: #333333;
   color: #f7be58;
+  height: 100%;
   box-sizing: border-box;
 }
 
@@ -14,8 +11,11 @@ html *, html *:before, html *:after {
   box-sizing: inherit;
 }
 
-a {
-  text-decoration: none;
+body {
+  margin: 0;
+  padding: 0 0 6em;
+  min-height: 100%;
+  position: relative;
 }
 
 .skip-links {
@@ -35,6 +35,7 @@ a {
 
 .skip-links a:focus {
   top: 0;
+  color: #333333;
 }
 
 #toggle-nav span,
@@ -84,7 +85,6 @@ a {
   transition: all 250ms ease-in-out;
 }
 
-/* --------- Sticky Navigation ----- */
 .top-nav {
   padding: .65em 2em;
   position: fixed;
@@ -97,7 +97,6 @@ a {
   right: 2em;
 }
 
-/* --------- Side Navigation ----- */
 .side-nav {
   position: fixed;
   visibility: hidden;
@@ -122,42 +121,47 @@ a {
   height: 100%;
   right: 0;
   display: block;
-  padding: 4em 3em;
+  padding: 4em 0 0 3em;
   background-color: #333333;
 }
 
 .sn-container li {
   padding-top: 1em;
-  width: 10em;
+  width: 15em;
   left: 0;
-  padding-left: 80%;
-  text-align: right;
+  text-align: left;
   display: block;
   margin-bottom: .5em;
   border-bottom: 2px solid #f7be58;
 }
 
 .sn-container li:hover, .sn-container li:focus, .sn-container li:active {
-  width: 10em;
+  width: 15em;
   border-bottom: 20em;
   border-bottom: 2px solid #f7be58;
   background-color: #28281E;
   background-size: 4em;
 }
 
-.sn-container a {
-  width: 10em;
+a {
   text-decoration: none;
   text-align: right;
-  color: #f7be58;
+  color: #916e3a;
   padding: .5em 0 .5em;
   transition: all 250ms linear;
 }
 
+a:hover, a:focus, a:active {
+  color: #f7be58;
+  width: 15em;
+  border-bottom: 20em;
+  background-size: 4em;
+}
+
+/* ---------  Basics END --------- */
 .square {
   text-align: center;
-  padding-top: 15em;
-  padding-bottom: 20em;
+  padding-top: 10em;
   height: 20em;
 }
 
@@ -166,7 +170,8 @@ a {
 }
 
 .logo-corner {
-  height: 3em;
+  height: 5em;
+  width: auto;
   margin: 1em 0 0  1em;
 }
 
@@ -274,16 +279,16 @@ a {
 }
 
 .error a {
-  border-top: 1.5px solid #333333;
-  border-bottom: 1.5px solid #333333;
+  border-top: 2px solid #333333;
+  border-bottom: 2px solid #333333;
   padding: .25em;
   text-decoration: none;
   color: #f7be58;
 }
 
 .error a:hover {
-  border-top: 1.5px solid #f7be58;
-  border-bottom: 1.5px solid #f7be58;
+  border-top: 2px solid #f7be58;
+  border-bottom: 2px solid #f7be58;
 }
 
 .work {
@@ -296,6 +301,68 @@ a {
   margin: 0 auto;
 }
 
+/*--------- Lightbox ---------*/
+.lightbox {
+  /** Default lightbox to hidden */
+  display: none;
+  /** Position and style */
+  text-decoration: none;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  top: 0;
+  left: 0;
+  background: white;
+  overflow-y: auto;
+  z-index: 2;
+  animation: boxin 300ms ease-in;
+  -webkit-animation: boxin 300ms ease-in;
+}
+
+.lightbox img {
+  /** Pad the lightbox image */
+  max-width: 100%;
+  max-height: 100%;
+  margin-top: 0%;
+}
+
+.lightbox:target {
+  /** Remove default browser outline */
+  outline: none;
+  /** Unhide lightbox **/
+  display: block;
+}
+
+.info {
+  float: right;
+  text-decoration: none;
+  color: black;
+  margin-top: 5%;
+  padding: .5em;
+}
+
+.closelightbox {
+  background-color: rgba(0, 0, 0, 0.3);
+  width: 100%;
+  height: 2em;
+  text-decoration: none;
+  text-align: center;
+  color: black;
+}
+
+.closelightbox:hover,
+.closelightbox:active,
+.closelightbox:focus {
+  background-color: black;
+  color: #8c888c;
+}
+
+.lightbox-container {
+  margin: 4em 1em 0;
+}
+
+/*--------- Lightbox END ---------*/
 .white {
   background-color: white;
 }
@@ -316,46 +383,56 @@ a {
   background-color: #eeeeee;
 }
 
+/*---------  Work Page ---------*/
+.gal {
+  overflow: hidden;
+  opacity: 1;
+  transition: all .5s linear;
+  padding-top: 4em;
+}
+
+.gal:hover,
+.gal:focus,
+.gal:active {
+  opacity: 1;
+}
+
+.work-fig .work-info {
+  background-color: #f7be58;
+  position: absolute;
+  bottom: 12%;
+  -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  right: 0;
+  left: 0;
+  text-align: left;
+  text-decoration: none;
+  padding-left: 1em;
+  color: #333333;
+  height: 5em;
+}
+
+.work-fig .work-info {
+  opacity: 0;
+  transition: all 350ms ease-in-out;
+}
+
+.work-fig:hover .work-info,
+.work-fig:active .work-info,
+.work-fig:focus .work-info {
+  opacity: 1;
+}
+
+.details {
+  border-bottom: 1px solid #8c8b8b;
+}
+
+/*---------  Work End ---------*/
 a.network_link {
   text-decoration: none;
   color: #6e6e6e;
   box-shadow: 0 1px 0 white inset, 0 -1px 0 #d4d4d4 inset;
-}
-
-.icon-arrow:before {
-  content: '\25BC';
-  float: right;
-}
-
-.newboxes {
-  display: none;
-}
-
-#work2 {
-  display: none;
-  max-height: none;
-}
-
-#work2.open {
-  display: block;
-}
-
-#work3,
-#work4,
-#work5,
-#work6 {
-  display: none;
-}
-
-#work3.open,
-#work4.open,
-#work5.open,
-#work6.open {
-  display: block;
-}
-
-.black {
-  color: #333333;
 }
 
 section {
@@ -422,7 +499,6 @@ img.work2 {
   height: auto;
   display: block;
   margin-left: 25%;
-  padding-bottom: 2em;
 }
 
 .next p {
@@ -496,10 +572,26 @@ hr {
 }
 
 footer {
-  position: relative;
+  position: absolute;
+  width: 100%;
   margin-top: 1em;
   background-color: #f7be58;
   height: 5.5em;
+  bottom: 0px;
+}
+
+.footer2 {
+  position: absolute;
+  width: 100%;
+  margin-top: 1em;
+  background-color: #f7be58;
+  height: 5.5em;
+}
+
+.cw {
+  color: #333333;
+  font-size: 10px;
+  margin-bottom: 0;
 }
 
 .grid {

@@ -1,0 +1,111 @@
+---
+---
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+    <meta charset="utf-8">
+    <title>{% if page.title %}{{page.title}} • {% endif %}  Marisa Bivi's Portfolio</title>
+    <link href="{{site.baseurl}}/css/style.css" rel="stylesheet">
+    <link href="{{site.baseurl}}/images/favicon.ico" rel="shortcut icon">
+    <meta name="description" content="{{page.meta}}">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+</head>
+
+<body>
+<!--SKIP LINKS -->
+    <ul class="skip-links">
+      <li><a href="{{site.baseurl}}/#nav" role="link">To Navigation</a></li>
+      <li><a href="{{site.baseurl}}/about" role="link">To About</a></li>
+      <li><a href="{{site.baseurl}}/work" role="link">To Portfolio</a></li>
+      <li><a href="{{site.baseurl}}#contact" role="link">To Contact</a></li>
+    </ul>
+</body>
+
+<header class="nav-wrapper" role="banner">
+  <div class="grid">
+    <div class="bucket unit unit-xs-1-2">
+      <a href="{{site.baseurl}}/"><img class="logo-corner" src="{{site.baseurl}}/images/mb-logo.svg"></a>
+    </div>
+    <div class="bucket unit unit-xs-1-2">
+	     <ul class="top-nav unit unit-xs-1">
+		       <li class="unit">
+			          <a id="toggle-nav" class="hb-toggle" href="#">
+			            <span></span>
+			          </a>
+		        </li>
+	      </ul>
+	      <div id="nav" class="side-nav nav" data-state="inactive" role="navigation">
+	         <ul class="sn-container smooth-scroll">
+             <li><a class="" href="{{site.baseurl}}/extra" role="link">Extra</a></li>
+             <li><a class="" href="{{site.baseurl}}/about" role="link">About</a></li>
+             <li><a class="" href="{{site.baseurl}}/work" role="link">Work</a></li>
+		      </ul>
+	      </div>
+  </div>
+</header>
+
+<main>
+  <div class="grid pad-t-2">
+    <div class="unit unit-xs-1 unit-m-2-3">
+      <a href="{{site.baseurl}}/work-2"><img src="{{site.baseurl}}/images/piece/2-3.jpg" class="work2"></a>
+    </div>
+    <div class="unit unit-xs-1 unit-m-1-3">
+      <h4 class="right2">Warlan Electric</h4>
+      <p class="right">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed gravida lectus. Nulla condimentum, neque et lacinia congue, diam mi posuere lectus, eget tempus risus sapien eu elit. Nunc in libero in orci aliquam faucibus vitae at nisi. Donec ligula sapien, placerat id sagittis vel, vehicula et felis. In sodales vitae augue eget efficitur.
+        Vestibulum sit amet tortor ac sem pharetra tincidunt. <a class="error" href="#img1"> read more >></a></p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <h4 class="left2">Galapagos Conservacy</h4>
+      <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed gravida lectus. Nulla condimentum, neque et lacinia congue, diam mi posuere lectus,
+        eget tempus risus sapien eu elit. Nunc in libero in orci aliquam faucibus vitae at nisi. Donec ligula sapien, placerat id sagittis vel, vehicula et felis. In sodales vitae augue eget efficitur. <a href="#"> read more >></a></p>
+    </div>
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <a href="{{site.baseurl}}/work-2"><img src="{{site.baseurl}}/images/piece/2-3.jpg" class="work2"></a>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <a href="{{site.baseurl}}/work-2"><img src="{{site.baseurl}}/images/piece/2-3.jpg" class="work2"></a>
+    </div>
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed gravida lectus. Nulla condimentum, neque et lacinia congue, diam mi posuere lectus, eget tempus risus sapien eu elit. Nunc in libero in orci aliquam faucibus vitae at nisi.
+        Donec ligula sapien, placerat id sagittis vel, vehicula et felis. In sodales vitae augue eget efficitur. Vestibulum sit amet tortor ac sem pharetra tincidunt. Cras aliquam blandit nulla vel tincidunt. Aenean malesuada, turpis et aliquet facilisis, leo massa bibendum mi, a ultrices turpis magna pharetra purus. <a href="#"> read more >></a></p>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sed gravida lectus. Nulla condimentum, neque et lacinia congue, diam mi posuere lectus,
+        eget tempus risus sapien eu elit. Nunc in libero in orci aliquam faucibus vitae at nisi. Donec ligula sapien, placerat id sagittis vel, vehicula et felis. In sodales vitae augue eget efficitur. <a href="#"> read more >></a></p>
+    </div>
+    <div class="unit unit-xs-1 unit-m-1-2">
+      <a href="{{site.baseurl}}/work-2"><img src="{{site.baseurl}}/images/piece/2-3.jpg" class="work2"></a>
+    </div>
+  </div>
+  </div>
+
+
+</main>
+
+
+<footer class="gold">
+  <div class="social-group" id="contact">
+    <a href="https://www.behance.net/bivma"><img src="{{site.baseurl}}/images/behance.svg" class="social" alt="Behance"></a>
+    <a href="https://instagram.com/bivmari"><img src="{{site.baseurl}}/images/insta.svg" class="social" alt="Instagram"></a>
+    <a href="https://twitter.com/bivmari"><img src="{{site.baseurl}}/images/twitter.svg" class="social" alt="Twitter"></a>
+    <a href="mailto:hello@marisabivi.ca"><img src="{{site.baseurl}}/images/email.svg" class="social" alt="E-Mail"></a>
+    <p class="cw">© 2016 Marisa Bivi</p>
+  </div>
+</footer>
+
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/2.1.2/jquery.scrollTo.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-localScroll/1.4.0/jquery.localScroll.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
+  <script src="{{site.baseurl}}/js/smooth-scrolling.js"></script>
+  <script src="{{site.baseurl}}/js/main.js"></script>
+</body>
+</html>

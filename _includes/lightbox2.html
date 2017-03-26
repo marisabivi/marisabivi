@@ -1,0 +1,56 @@
+<div class="lightbox" id="{{include.id}}">
+
+        <div class="lightbox-container">
+
+        <div class="grid">
+          <div class="unit unit-xs-1 unit-m-1-2 island">
+            <h1>{{include.title}}</h1>
+            <p class="artform kilo">{{include.artform}}</p>
+            <hr class="underline">
+            <h2 class="mega subtext">{{include.text}}</h2>
+          </div>
+          <div class="unit unit-xs-1 unit-m-1-2 pad-top">
+             <img class="main-pic" src="{{include.main-pic}}" alt="img1">
+          </div>
+
+                    <div class="grid">
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">The challenge</h2>
+                            <p>{{include.challenge}}</p>
+                        </div>
+
+                        <div class="casestudy unit unit-xs-1 unti-s-1 unit-m-1-2 unit-l-1-2">
+                            <h2 class="details">The solution</h2>
+                            <p>{{include.solution}}</p>
+                        </div>
+                    </div>
+
+            <img class="push" src="{{include.img1}}" alt="sketch">
+
+            <img src="{{include.img2}}" alt="details">
+
+            <img src="{{include.img3}}" alt="details3">
+
+         </div>
+
+    <ul class="grid galnav">
+         <a href="{{include.back}}" class=" info unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+        <li class="previous">
+               <img src="{{site.baseurl}}/images/left.svg" class="">
+        </li>
+            </a>
+
+        <a href="{{include.after}}" class="info unit unit-xs-1-2 unit-s-1-2 unit-m-1-2 unit-l-1-2">
+        <li class="next">
+            <img src="{{site.baseurl}}/images/right.svg">
+        </li>
+        </a>
+    </ul>
+
+    <hr>
+        <a class="closelightbox" href="{{site.baseurl}}/#_">
+        <p>Back to Top</p>
+    </a>
+
+</div>
